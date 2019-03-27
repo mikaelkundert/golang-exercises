@@ -18,6 +18,8 @@ import (
 func main() {
 	for _, url := range os.Args[1:] {
 		if !strings.HasPrefix(url, "http://") {
+			// This doesn't make sense, if you are requesting with https://,
+			// but that's what this excercise wanted :)
 			url = "http://" + url
 		}
 		resp, err := http.Get(url)
