@@ -28,7 +28,7 @@ import (
 
 //!+main
 
-var palette = []color.Color{color.White, color.RGBA{0x00, 0xff, 0x00, 0xff}}
+var palette = []color.Color{color.White, color.RGBA{0x00, 0xff, 0x00, 0xff}, color.RGBA{0xff, 0x00, 0x00, 0xff}, color.RGBA{0x00, 0x00, 0xff, 0xff}}
 
 func main() {
 	//!-main
@@ -65,10 +65,11 @@ func lissajous(out io.Writer) {
 	for i := 0; i < nframes; i++ {
 		rect := image.Rect(0, 0, 2*size+1, 2*size+1)
 		img := image.NewPaletted(rect, palette)
+		colorIndex := uint8(rand.Intn(3) + 1)
 		for t := 0.0; t < cycles*2*math.Pi; t += res {
 			x := math.Sin(t)
 			y := math.Sin(t*freq + phase)
-			img.SetColorIndex(size+int(x*size+0.5), size+int(y*size+0.5), 1)
+			img.SetColorIndex(size+int(x*size+0.5), size+int(y*size+0.5), colorIndex)
 		}
 		phase += 0.1
 		anim.Delay = append(anim.Delay, delay)
