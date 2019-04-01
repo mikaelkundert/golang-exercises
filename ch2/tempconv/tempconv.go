@@ -8,14 +8,22 @@ package tempconv
 
 import "fmt"
 
+// Celsius represents a temperature degree type.
 type Celsius float64
+
+// Fahrenheit represents a temperature degree type.
 type Fahrenheit float64
+
+// Kelvin represents a temperature degree type.
 type Kelvin float64
 
 const (
+	// AbsoluteZeroC declares the absolute zero point for Celsius.
 	AbsoluteZeroC Celsius = -273.15
-	FreezingC     Celsius = 0
-	BoilingC      Celsius = 100
+	// FreezingC declares temperature when water gets freezing.
+	FreezingC Celsius = 0
+	// BoilingC declares temprature when water starts to boil.
+	BoilingC Celsius = 100
 )
 
 func (c Celsius) String() string    { return fmt.Sprintf("%g°C", c) }
