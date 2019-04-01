@@ -22,22 +22,7 @@ func main() {
 			fmt.Fprintf(os.Stderr, "unitconv: %v\n", err)
 			os.Exit(1)
 		}
-		f := tempconv.Fahrenheit(t)
-		c := tempconv.Celsius(t)
-		k := tempconv.Kelvin(t)
-
-		fmt.Printf("%s is:\n", c)
-		fmt.Printf("\t%s\n", tempconv.CToF(c))
-		fmt.Printf("\t%s\n", tempconv.CToK(c))
-
-		fmt.Printf("%s is:\n", f)
-		fmt.Printf("\t%s\n", tempconv.FToC(f))
-		fmt.Printf("\t%s\n", tempconv.FToK(f))
-
-		fmt.Printf("%s is:\n", k)
-		fmt.Printf("\t%s\n", tempconv.KToC(k))
-		fmt.Printf("\t%s\n", tempconv.KToF(k))
-
+		tempconv.Print(t)
 	}
 }
 
