@@ -12,6 +12,7 @@ import (
 	"os"
 	"strconv"
 
+	"github.com/mikaelkundert/golang-exercises/ch2/lenconv"
 	"github.com/mikaelkundert/golang-exercises/ch2/tempconv"
 )
 
@@ -22,7 +23,15 @@ func main() {
 			fmt.Fprintf(os.Stderr, "unitconv: %v\n", err)
 			os.Exit(1)
 		}
+		fmt.Println("TEMPERATURES")
+		fmt.Println("============")
 		tempconv.Print(t)
+
+		fmt.Println()
+
+		fmt.Println("LENGTHS")
+		fmt.Println("=======")
+		lenconv.Print(t)
 	}
 }
 
