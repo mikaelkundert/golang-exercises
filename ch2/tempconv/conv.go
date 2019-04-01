@@ -13,7 +13,7 @@ import "math"
 func CToF(c Celsius) Fahrenheit { return Fahrenheit(c*9/5 + 32) }
 
 // CToK converts a Celsius temperature to Kelvin.
-func CToK(c Celsius) Kelvin { return Kelvin(float64(c) - math.Abs(float64(AbsoluteZeroC))) }
+func CToK(c Celsius) Kelvin { return Kelvin(float64(c) + math.Abs(float64(AbsoluteZeroC))) }
 
 // FToC converts a Fahrenheit temperature to Celsius.
 func FToC(f Fahrenheit) Celsius { return Celsius((f - 32) * 5 / 9) }
@@ -22,7 +22,7 @@ func FToC(f Fahrenheit) Celsius { return Celsius((f - 32) * 5 / 9) }
 func FToK(f Fahrenheit) Kelvin { return CToK(FToC(f)) }
 
 // KToC converts a Kelvin temperature to Celsius.
-func KToC(k Kelvin) Celsius { return Celsius(float64(k) + math.Abs(float64(AbsoluteZeroC))) }
+func KToC(k Kelvin) Celsius { return Celsius(float64(k) - math.Abs(float64(AbsoluteZeroC))) }
 
 // KToF converts a Kelvin temperature to Fahrenheit.
 func KToF(k Kelvin) Fahrenheit { return CToF(KToC(k)) }
