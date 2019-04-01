@@ -4,7 +4,7 @@
 // See page 43.
 //!+
 
-// Cf converts its numeric argument to Celsius, Fahrenheit and Kelvin.
+// Unitconv converts its numeric argument to Celsius, Fahrenheit and Kelvin.
 package main
 
 import (
@@ -19,7 +19,7 @@ func main() {
 	for _, arg := range os.Args[1:] {
 		t, err := strconv.ParseFloat(arg, 64)
 		if err != nil {
-			fmt.Fprintf(os.Stderr, "cfk: %v\n", err)
+			fmt.Fprintf(os.Stderr, "unitconv: %v\n", err)
 			os.Exit(1)
 		}
 		f := tempconv.Fahrenheit(t)
