@@ -4,7 +4,7 @@
 // See page 43.
 //!+
 
-// Cf converts its numeric argument to Celsius and Fahrenheit.
+// Cf converts its numeric argument to Celsius, Fahrenheit and Kelvin.
 package main
 
 import (
@@ -24,8 +24,20 @@ func main() {
 		}
 		f := tempconv.Fahrenheit(t)
 		c := tempconv.Celsius(t)
-		fmt.Printf("%s = %s, %s = %s\n",
-			f, tempconv.FToC(f), c, tempconv.CToF(c))
+		k := tempconv.Kelvin(t)
+
+		fmt.Printf("%s is:\n", c)
+		fmt.Printf("\t%s\n", tempconv.CToF(c))
+		fmt.Printf("\t%s\n", tempconv.CToK(c))
+
+		fmt.Printf("%s is:\n", f)
+		fmt.Printf("\t%s\n", tempconv.FToC(f))
+		fmt.Printf("\t%s\n", tempconv.FToK(f))
+
+		fmt.Printf("%s is:\n", k)
+		fmt.Printf("\t%s\n", tempconv.KToC(k))
+		fmt.Printf("\t%s\n", tempconv.KToF(k))
+
 	}
 }
 
