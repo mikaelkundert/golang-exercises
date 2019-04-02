@@ -12,4 +12,4 @@ type Pound float64
 const Multiplier = 2.204623
 
 func (k Kilogram) String() string { return fmt.Sprintf("%gKg", k) }
-func (p Pound) String() string    { return fmt.Sprintf("%glbs", p) }
+func (p Pound) String() string    { return fmt.Sprintf("%glb", p) }
