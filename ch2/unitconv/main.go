@@ -13,6 +13,7 @@ import (
 	"strconv"
 
 	"github.com/mikaelkundert/golang-exercises/ch2/lenconv"
+	"github.com/mikaelkundert/golang-exercises/ch2/massconv"
 	"github.com/mikaelkundert/golang-exercises/ch2/tempconv"
 )
 
@@ -32,6 +33,15 @@ func main() {
 		fmt.Println("LENGTHS")
 		fmt.Println("=======")
 		lenconv.Print(t)
+
+		fmt.Println()
+
+		fmt.Println("MASS")
+		fmt.Println("====")
+		massconv.Print(t)
+
+		fmt.Println()
+
 	}
 }
 
